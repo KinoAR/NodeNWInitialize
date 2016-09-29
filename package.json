@@ -1,0 +1,23 @@
+{
+  "name": "webkit-initializer",
+  "version": "1.0.0",
+  "description": "command line tool to initialize webkit",
+  "main": "index.js",
+  "scripts": {
+    "test": "webkit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KinoAR/NodeNWInitialize.git"
+  },
+  "keywords": [
+    "webkit",
+    "node"
+  ],
+  "author": "Kino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KinoAR/NodeNWInitialize/issues"
+  },
+  "homepage": "https://github.com/KinoAR/NodeNWInitialize#readme"
+}

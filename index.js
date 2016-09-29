@@ -5,14 +5,15 @@ const args = process.argv.slice(2, 4);
 
 class IO {
   static createDirectory(directoryName) {
-    let filePath = `/${directoryName}`;
+    let filePath = `./${directoryName}`;
     if(!system.existsSync(filePath))
       system.mkdirSync(filePath);
+    console.log("Directory created");
   }
 
   static createFile(directoryName, fileName, data) {
     let success = false;
-    let filePath =`/${directoryName}/${fileName}`;
+    let filePath =`./${directoryName}/${fileName}`;
     if(!system.existsSync(filePath)) {
       system.writeFileSync(filePath);
       success = true;

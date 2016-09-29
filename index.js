@@ -15,7 +15,20 @@ class IO {
     let success = false;
     let filePath =`./${directoryName}/${fileName}`;
     if(!system.existsSync(filePath)) {
-      system.writeFileSync(filePath);
+      system.writeFileSync(filePath, data);
+      success = true;
+    } else {
+      console.log(`Couldn't write file at :${filePath}`);
+      success = false;
+    }
+    return success;
+  }
+
+  static createJSON(directoryName, fileName, data) {
+    let success = false;
+    let filePath =`./${directoryName}/${fileName}`;
+    if(!system.existsSync(filePath)) {
+      system.writeFileSync(filePath, data);
       success = true;
     } else {
       console.log(`Couldn't write file at :${filePath}`);
@@ -47,9 +60,18 @@ class Processor {
 }
 
 function initializeDirectory(directoryName, entryPointFile, packageStructure) {
+  let htmlBase = `<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<p> Hello World </p>
+</body>
+</html>`;
   IO.createDirectory(directoryName);
-  IO.createFile(directoryName, `${entryPointFile}.html`);
-  IO.createFile(directoryName, "package.json", JSON.stringify(packageStructure));
+  IO.createFile(directoryName, `${entryPointFile}.html`, htmlBase);
+  IO.createJSON(directoryName, "package.json", JSON.stringify(packageStructure));
 }
 
 Processor.processArguments(args[0], args[1]); 

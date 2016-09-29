@@ -14,7 +14,7 @@ class IO {
     let success = false;
     let filePath =`/${directoryName}/${fileName}`;
     if(!system.existsSync(filePath)) {
-      system.writeSFileSync(filePath);
+      system.writeFileSync(filePath);
       success = true;
     } else {
       console.log(`Couldn't write file at :${filePath}`);

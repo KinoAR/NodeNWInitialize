@@ -49,7 +49,7 @@ class Processor {
 function initializeDirectory(directoryName, entryPointFile, packageStructure) {
   IO.createDirectory(directoryName);
   IO.createFile(directoryName, `${entryPointFile}.html`);
-  IO.createFile(directoryName, "package.json", packageStructure);
+  IO.createFile(directoryName, "package.json", JSON.stringify(packageStructure));
 }
 
 Processor.processArguments(args[0], args[1]); 

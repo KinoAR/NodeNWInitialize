@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const system = require('fs');
-const readline = require('sget');
+const readline = require('readline-sync');
 const args = process.argv.slice(2, 4);
 
 class IO {
@@ -33,18 +33,14 @@ class Processor {
       let packageStructure = {};
       let buffer = null;
       console.log("NW Initializer");
-      packageStructure.name = readline("Name :");
-      /*packageStructure.description = readline.question("Description: ");
-      console.log(packageStructure.description);
+      packageStructure.name = readline.question("Name: " );
+      packageStructure.description = readline.question("Description: ");
       packageStructure.version = readline.question("Version: ");
       buffer = readline.question("Window Title: ");
       packageStructure.window = {
         title: buffer
       };
-      */
-     console.log(packageStructure);
-    // initializeDirectory(directoryName,'index',packageStructure);
-     process.exit();
+      initializeDirectory(directoryName,'index',packageStructure);
     }
   }
 }
